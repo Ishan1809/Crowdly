@@ -9,7 +9,8 @@ import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import WorkOutlineRoundedIcon from '@mui/icons-material/WorkOutlineRounded';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-
+import {Users} from "../../data"
+import CloseFriend from "./../closeFriend/closeFriend"
 
 export default function sidebar() {
   return (
@@ -58,22 +59,9 @@ export default function sidebar() {
         </button>
         <hr className="sidebarHr"/>
         <ul className="sidebarFriendList">
-            <li className="sidebarFriend">
-                <img className="sidebarFriendImg" alt="" src="/assets/person/2.jpeg" />
-                <span className="sidebarFriendName">Jane Doe</span>
-            </li>
-            <li className="sidebarFriend">
-                <img className="sidebarFriendImg" alt="" src="/assets/person/3.jpeg" />
-                <span className="sidebarFriendName">Jane Doe</span>
-            </li>
-            <li className="sidebarFriend">
-                <img className="sidebarFriendImg" alt="" src="/assets/person/4.jpeg" />
-                <span className="sidebarFriendName">Jane Doe</span>
-            </li>
-            <li className="sidebarFriend">
-                <img className="sidebarFriendImg" alt="" src="/assets/person/5.jpeg" />
-                <span className="sidebarFriendName">Jane Doe</span>
-            </li>
+            {Users.map(u=>(
+              <CloseFriend key={u.id} user={u}/>
+            ))}
         </ul>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./feed.css"
 import Share from "./../share/share"
-import Post from "./../post/post"
+import Post from "./../post/Post"
 import {Posts} from "../../data"
 
 
