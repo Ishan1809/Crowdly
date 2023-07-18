@@ -14,7 +14,7 @@ import { AuthContext } from "./context/AuthContext";
 
 function App() {
 
-  const user = useContext(AuthContext);
+  const { user }= useContext(AuthContext);
   // const user = null
   return (
     <Router>

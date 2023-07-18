@@ -10,7 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 export default function Topbar() {
   
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (
@@ -45,7 +45,9 @@ export default function Topbar() {
                 <span className="topbarIconBadge">1</span>
             </div>
         </div>
+        <Link to={`${user.username}`}>  
         <img alt="" src={user.profilePicture ? PF+user.profilePicture : PF+"person/noAvatar.png"} className="topbarImg"/>
+        </Link>
       </div>
     </div>
   );
