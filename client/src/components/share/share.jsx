@@ -6,6 +6,7 @@ import LabelIcon from "@mui/icons-material/Label";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 export default function Share() {
   const { user } = useContext(AuthContext);
@@ -60,6 +61,12 @@ export default function Share() {
           />
         </div>
         <hr className="shareHr" />
+        {file && (
+          <div className="shareImgContainer">
+            <img className="shareImg" src={URL.createObjectURL(file)} alt=""/>
+            <CancelIcon className="shareCancelImg" onClick={() => setFile(null)} />
+          </div>
+        )}
         <form className="shareBottom" onSubmit={shareHandler}>
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
