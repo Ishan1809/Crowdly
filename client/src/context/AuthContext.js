@@ -2,7 +2,16 @@ import { createContext, useReducer } from "react";
 import AuthReducer from "./AuthReducer";
 
 const INITIAL_STATE = {
-  user: null,
+  user: {
+    _id: "64b2e2b90257cfd5d20fbad2",
+    username: "jane",
+    email: "jane@gmail.com",
+    profilePicture: "",
+    coverPicture: "",
+    followers: [],
+    followings: [],
+    isAdmin: false,
+  },
   isFetching: false,
   error: false,
 };
@@ -21,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
         dispatch,
       }}
     >
-        {children}
+      {children}
     </AuthContext.Provider>
   );
 };
